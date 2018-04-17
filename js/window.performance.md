@@ -1,14 +1,14 @@
-#####performanced的作用
+##### performanced的作用
 
 　Web Performance 接口允许网页中的 JavaScript 代码可以通过具体的函数（由 window 对象的 performance 属性提供）测量当前网页页面或者 web应用的性能。它能提供高精度的时间戳，可以更加精准的计算脚本运行的时间。
 
-#####浏览器兼容性
+##### 浏览器兼容性
 
 　pc和移动端的主流浏览器都支持。
 
-#####API
+##### API
 
-######1、performance.timing(页面整体的时间参数)
+###### 1、performance.timing(页面整体的时间参数)
 
 　performance对象的timing属性指向一个对象，它包含了各种与浏览器性能有关的时间数据，提供浏览器处理网页各个阶段的耗时。我们在chrome中输入performance.timing就可以看到下面的数据：
 
@@ -48,7 +48,7 @@
     domready时间 ：domContentLoadedEventEnd - navigationStart
     onload时间 ：loadEventEnd - navigationStart
 
-######2、performance.getEntries()
+###### 2、performance.getEntries()
 　在chrome中输入performance.getEntries()可以得到静态资源的数组列表：
 
 ![performance.getEntries()得到的资源文件加载数据列表](http://upload-images.jianshu.io/upload_images/2593925-18bd74f917656ca2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -58,7 +58,7 @@
     performance.getEntriesByName(name) 根据资源的name获取相应的数据（如上图中的name）
     performance.getEntriesByType(entryType) 根据资源的name获取相应的数据（如上图中的entryType）
 
-######3、performance.navigation
+###### 3、performance.navigation
 
 　在chrome中输入performance.navigation：
 ![performance.navigation](http://upload-images.jianshu.io/upload_images/2593925-76182f9f4d569ddf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -71,7 +71,7 @@
 　　255：任何其他来源的加载，相当于常数performance.navigation.TYPE_RESERVED。
 　**performance.navigation.redirectCount**：表示网页经过重定向的次数。
 
-######4、performance.memory
+###### 4、performance.memory
 　![performance.memory](http://upload-images.jianshu.io/upload_images/2593925-c464859ee7e5c8bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
      memory: {
@@ -79,9 +79,9 @@
         totalJSHeapSize: 35100000, // 可使用的内存
         jsHeapSizeLimit: 793000000 // 内存大小限制
     },
-######５、performance.now()
+###### ５、performance.now()
 　performance.now方法返回当前网页自从performance.timing.navigationStart到当前时间之间的微秒数。
-######６、performance.mark()
+###### ６、performance.mark()
 　mark方法用于为相应的视点做标记。对应的方法有 performance.clearMarks()。
 
 
