@@ -1,12 +1,12 @@
 本来说好写完组件通信后就会写vuex相关的东西，现在快过去两个多月了，主要是由于自己工作的原因，后面会保证更新速度的。不废话了，直接正题。
-##介绍（官方套路）
+## 介绍（官方套路）
 ### 什么是[vuex](https://vuex.vuejs.org/zh-cn/intro.html)
 Vuex 是一个专为 Vue.js 应用程序开发的**状态管理模式**（至于什么是状态管理模式我就不科普了）。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 [devtools extension](https://github.com/vuejs/vue-devtools)，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。
 ### 为什么需要vuex
 上篇文章说过了，当一个应用比较简单的时候，组件之间的通信以及交互都不会很多，上篇中介绍的通信方法足够应付大多数的场景。但是当应用足够复杂，**多个组件共享一个状态**的时候，前面的方法会十分繁琐混乱并且不易管理。所以我们就需要将组件共享的状态抽取成一个类似全局变量的东西，任何组件都可以get以及set这个状态，这样就可以实现状态的高效管理。另外，通过定义和隔离状态管理中的各种概念并强制遵守一定的规则，我们的代码将会变得更结构化且易维护。
-##核心概念
+## 核心概念
 
-###[store](https://vuex.vuejs.org/zh-cn/getting-started.html)
+### [store](https://vuex.vuejs.org/zh-cn/getting-started.html)
 每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。Vuex 和单纯的全局对象有以下两点不同：
 - Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。
 - 你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。
@@ -36,7 +36,7 @@ console.log(store.state.totalPrice);  // 1
 ```
 这里**不通过直接修改store.state的值，而是通过提交mutation去变更**，主要是为了使得整个数据的变更可以追踪。举个例子：门禁卡，每次进出我们刷一下卡系统显示的是你的名字，知道你来了。刷卡的过程就是你提交的mutation，声明一声：你大爷来了，然后系统（仓库状态）记录一下状态。后面查询出入记录的时候就有迹可循。
 
-###[state](https://vuex.vuejs.org/zh-cn/state.html)
+### [state](https://vuex.vuejs.org/zh-cn/state.html)
 state是单一状态树，用一个对象包含所有应用层级的状态，具有唯一性。（这种话太官方，就是一个对象，名字叫state。）
 state的读写就是store中的代码。由于 Vuex 的状态存储是响应式的，所以我们在组件中通过**计算属性**去返回某个状态：
 ```
@@ -93,7 +93,7 @@ export default new Vuex.Store({
 })
 ```
 
-###[Getter](https://vuex.vuejs.org/zh-cn/getters.html)
+### [Getter](https://vuex.vuejs.org/zh-cn/getters.html)
 简单点介绍getter就是vuex中的计算属性。
 下面对比一下 **computed VS  getters**
 ```
@@ -159,19 +159,19 @@ computed: {
 },
 ```
 
-###[Mutation](https://vuex.vuejs.org/zh-cn/mutations.html)
+### [Mutation](https://vuex.vuejs.org/zh-cn/mutations.html)
 
-####概念
+#### 概念
 mutation就是事件类型与事件回调，本身这个应该在前面讲比较合适，因为这是更改状态的第一步，但是官方按照这个顺序，我们就还是按原样。
 每一个mutation都会有一个事件的type和callback，当我们store.commit('plus')一个事件后，vuex会根据它的type(plus)，然后调用相应的callback执行增加的操作，然后去变更仓库中的状态。
 
-####载荷
+#### 载荷
 同时你可以向store.commit增加额外的参数，这会被当做mutation的载荷playload。
 
-####使用常量替代 Mutation 事件类型
+#### 使用常量替代 Mutation 事件类型
 这块其实很简单，就是将额外编写一个专门存放type的文件引入mutation，将常量作为各个mutation的事件类型
 
-####Mutation 必须是同步函数
+#### Mutation 必须是同步函数
 这个是mutation中最重要的一点，如果你在mutation中有异步的回调，那么追踪记录就不可能了，这样就破坏了vuex的初衷。
 
 具体代码
@@ -229,8 +229,8 @@ export const ADD_TO_SHOPCART = 'ADD_TO_SHOPCART'
 export const MINUS_TO_SHOPCART = 'MINUS_TO_SHOPCART'
 ```
 
-###[Action](https://vuex.vuejs.org/zh-cn/actions.html)
-####概念
+### [Action](https://vuex.vuejs.org/zh-cn/actions.html)
+#### 概念
 action就是异步提交mutation。Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象,但是这个context对象不是store本身，因为后面介绍到的Module会存在局部context和根context两种。
 ```
 action: {
@@ -241,7 +241,7 @@ action: {
 ```
 有个图很好的说明了action的具体实现，这里dispatch出action后，再在回调里面去commit mutation，这样即便是回调依然可以追踪到相关的状态变更记录。
 ![action.png](http://upload-images.jianshu.io/upload_images/2593925-8eaba0551a2b155e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-####分发action
+#### 分发action
 Action 通过 store.dispatch 方法触发，支持载荷方式和对象方式进行分发，这里我自己的项目里面没有用到action，但是我们可以假设一个场景，就是你添加商品的时候需要请求接口判断库存（不过一般都不会这么去设计）：
 ```
 actions: {
@@ -286,9 +286,9 @@ actions: {
   }
 }
 ```
-###[Module](https://vuex.vuejs.org/zh-cn/modules.html)
+### [Module](https://vuex.vuejs.org/zh-cn/modules.html)
 
-####概念
+#### 概念
 module这块其实不太想讲的，因为官方的文档写的相当清楚。这里就稍微搬弄一波。仓库虽然可以存放很多东西，但是东西太多了之后也还是会凌乱，所以我们需要分区，module就是将store分成单独的模块，每个module享有自己独有的state，mutation，action，getter甚至是嵌套的子模块。
 我的代码中没有使用module，这里依然使用官方的例子解释，使用代码很简单，看一下就好了：
 ```
@@ -315,9 +315,9 @@ const store = new Vuex.Store({
 store.state.a // -> moduleA 的状态
 store.state.b // -> moduleB 的状态
 ```
-####模块的局部状态
+#### 模块的局部状态
 因为每个module都有自己的局部状态，那么必然就会区分局部状态和根状态，**主要注意的也就是这点局部状态和根状态，mutation，action，getter，通过不同的参数位将局部和根状态传入**这里就没有代码了，看官方的文档还是非常清楚的。
-####命名空间
+#### 命名空间
 这个就是让模块有更高封装度的的一个属性 namespaced: true。
 这样这个模块的里面的mutation，action这类都会有相应的路径。就像下面的代码，如果我们去掉namespaced:true，那么account模块中的getters，actions，mutations里面的方法都是全局可以访问的。但是加了namespaced:true，就需要加上对应的模块路径访问。
 ```
@@ -363,7 +363,7 @@ const store = new Vuex.Store({
 })
 ```
 module里面其他的就不讲了。最后讲下上文提到的辅助函数，这里以mapstate为例。
-###辅助函数mapstate
+### 辅助函数mapstate
 
 下面的是mapstate的源码：
 ```
