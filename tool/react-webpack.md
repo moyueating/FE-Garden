@@ -38,6 +38,7 @@
   ```
     new webpack.DefinePlugin({
       PRODUCTION: process.env.NODE_ENV === "production",
+      DEVELOPMENT: process.env.NODE_ENV === "development"
     })
   ```
   然后在js代码中，如果代码中使用了eslint，还需要在package.json中将这个变量声明一下
@@ -46,7 +47,7 @@
       "extends": "react-app",  // 继承已启用的规则配置
       "globals": {
         "PRODUCTION": false  // false不允许PRODUCTION变量重写，只读属性
-        "TEST": true  // true允许PRODUCTION变量重写
+        "DEVELOPMENT": true  // true允许DEVELOPMENT变量重写
       }
     }
   ```
