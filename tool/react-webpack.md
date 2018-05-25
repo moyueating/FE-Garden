@@ -13,7 +13,7 @@
   这个插件就是防止不同的系统下对于大小写的问题导致路径出错
 
   #### [InterpolateHtmlPlugin](https://github.com/zanettin/react-dev-utils)
-  这个插件是配合HtmlWebpackPlugin一起使用的,允许你在index.html中使用变量
+  这个插件是配合html-webpack-plugin一起使用的,允许你在index.html中使用变量
   ```
     // 我们在create-react-app生成的项目中public下的index.html可以看到下面的代码
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
@@ -21,4 +21,40 @@
   ```
   这里的PUBLIC_URL就是一个变量，当webpack打包的时候将你设置的值替换它。
 
+  #### [WatchMissingNodeModulesPlugin](https://github.com/zanettin/react-dev-utils)
+  这个也是方便开发的插件，当你在一个项目里引用了没有安装的node_modules,webpack会报错module not found，然后你安装完成后，需要自己手动重新启动服务。WatchMissingNodeModulesPlugin这个插件就是帮你省去这步骤，你安装玩缺失的module，webpack会自动重启。
+
+  #### [eslintFormatter](https://github.com/zanettin/react-dev-utils)
+  emmmm....eslint
+
+  #### [ModuleScopePlugin](https://github.com/zanettin/react-dev-utils)
+  这个插件是防止你在当前项目中引入非本项目的资源（即src和node_modules文件夹之外的），因为只有src文件夹下的代码才会被babel转译。
+
+  #### [webpack.NamedModulesPlugin](https://webpack.docschina.org/plugins/named-modules-plugin/#src/components/Sidebar/Sidebar.jsx)
+  这个插件的作用是在热加载时直接返回更新文件名，而不是文件的id，方便开发人员定位。[具体](https://www.jianshu.com/p/8499842defbe)
+
+  #### [webpack.DefinePlugin](https://webpack.docschina.org/plugins/define-plugin/#src/components/Sidebar/Sidebar.jsx)
+  DefinePlugin 允许创建一个在编译时可以配置的全局常量。这可能会对开发模式和发布模式的构建允许不同的行为非常有用。比如我们区分测试环境和正式环境的域名
+  ```
+    new webpack.DefinePlugin({
+      PRODUCTION: process.env.NODE_ENV === "production",
+    })
+  ```
+  然后在js代码中，如果代码中使用了eslint，还需要在package.json中将这个变量声明一下
+  ```
+    "eslintConfig": {
+      "extends": "react-app",  // 继承已启用的规则配置
+      "globals": {
+        "PRODUCTION": false  // false不允许PRODUCTION变量重写，只读属性
+        "TEST": true  // true允许PRODUCTION变量重写
+      }
+    }
+  ```
+  ```
+    if(PRODUCTION){
+      domain = www.production.com
+    }else{
+      domain = www.development.com
+    }
+  ```
 
