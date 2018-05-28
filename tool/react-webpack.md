@@ -59,3 +59,20 @@
     }
   ```
 
+  #### [webpack.HotModuleReplacementPlugin](https://webpack.docschina.org/plugins/hot-module-replacement-plugin/#src/components/Sidebar/Sidebar.jsx)
+  模块热替换插件，cereate-react-app中只有css变换才有热替换，js变更会刷新页面。
+
+  #### [IgnorePlugin](https://webpack.docschina.org/plugins/ignore-plugin/#src/components/Sidebar/Sidebar.jsx)
+  webpack打包时忽略打包的资源。
+
+### webpack.config.prod.js
+
+  #### [extract-text-webpack-plugin](https://webpack.docschina.org/plugins/extract-text-webpack-plugin/#src/components/Sidebar/Sidebar.jsx)
+  将CSS从JS bundle中拆分出来，减小JS的文件大小，加载速度更快。
+
+  #### [webpack-manifest-plugin](https://webpack.docschina.org/guides/output-management/#manifest)
+  这个就是在build打包的过程中生成一个JSON文件，用来展示编译之前得文件和编译以后的文件的映射关系。
+
+  #### [sw-precache-webpack-plugin](https://github.com/goldhand/sw-precache-webpack-plugin)
+  SWPrecacheWebpackPlugin是一个webpack插件，用于使用service worker来缓存外部项目依赖项。 
+  初步了解[service worker](https://www.jianshu.com/p/0e2dee4c77bc)
