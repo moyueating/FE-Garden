@@ -75,4 +75,5 @@
 
   #### [sw-precache-webpack-plugin](https://github.com/goldhand/sw-precache-webpack-plugin)
   SWPrecacheWebpackPlugin是一个webpack插件，用于使用service worker来缓存外部项目依赖项。 
-  初步了解[service worker](https://www.jianshu.com/p/0e2dee4c77bc)
+  [初步了解 Service Worker](https://www.jianshu.com/p/0e2dee4c77bc)
+  [深入了解 Service Worker](https://zhuanlan.zhihu.com/p/27264234)
