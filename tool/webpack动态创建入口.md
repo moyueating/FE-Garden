@@ -2,10 +2,10 @@
   create-react-app创建的应用默认是SPA的架子入口只有index.html。但是有些情况下我们确实需要在同一个工程下开发多个SPA项目，一个是2C的H5项目，一个是后台的管理项目。网上多页面的配置已经很多了，这里只是想扩展记录一些方法。
 
 ### 实践
-  项目的架子是下面这样的
+  项目的架子是下面这样的.
   ![structure](https://raw.githubusercontent.com/moyueating/blogImg/master/webpack%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%85%A5%E5%8F%A3/structure.png)
 
-  按照原来常见的那种配置也是OK的，
+  按照原来常见的那种配置也是OK的。
   ```
     // 入口文件的配置
     entry: {
