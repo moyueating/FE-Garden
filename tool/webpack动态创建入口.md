@@ -3,9 +3,10 @@
 
 ### 实践
   项目的架子是下面这样的.
+  
   ![structure](https://raw.githubusercontent.com/moyueating/blogImg/master/webpack%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%85%A5%E5%8F%A3/structure.png)
 
-  按照原来常见的那种配置也是OK的。
+  按照网上大多数的配置如下。
   ```
     // 入口文件的配置
     entry: {
