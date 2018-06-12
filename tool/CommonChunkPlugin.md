@@ -1,4 +1,4 @@
-随着项目一点点的深入，对于webpack的配置也是改了又改，看了又看，这里就再记录一下webpack.optimize.CommonsChunkPlugin的用法，多用于个人记忆。希望对你有所帮助。
+随着项目一点点的深入，对于webpack的配置也是改了又改，看了又看，这里就再记录一下CommonsChunkPlugin的用法，多用于个人记忆。希望对你有所帮助。
 
 ### 基本使用
   ```
@@ -11,15 +11,16 @@
   }),
 
   ```
-我们重新看下CommonsChunkPlugin配置项
+### CommonsChunkPlugin配置项
 
 1、name和names 
+
   a.如果name的值不与任何已存在的chunk相同，则会从options.chunks中提取出公共代码，并形成新的chunk，并以options.name去设置该chunk的name。
 
   b.如果name选中的是已存在的chunk，则会从options.chunks中提取出被name选中的chunk。
 
   c.如果name是不存在的chunk，则会根据其他配置提取出公共chunk，并将该chunk的name值设为opitons.name的值。
-  
+
   d.如果name是个数组，则等同于每个name轮番调用该插件。
 
 2、filename common chunk存入本地的文件名，未设置的话就默认使用chunk的名字。
