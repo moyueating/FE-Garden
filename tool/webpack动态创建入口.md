@@ -107,7 +107,7 @@
   ```
   ```
     function getPlugins() {
-      let = [...otherPlugin]
+      let plugins = [...otherPlugin]
       let srcDirName = './src/views/*/index.js'; 
       glob.sync(srcDirName).forEach(function (name) {
         let n = name.slice(0, name.length - 9); 
@@ -132,6 +132,7 @@
             },
         }))
       });
+      return plugins
     }
   ```
   ```
