@@ -12,6 +12,7 @@
 
 - [X] [H5浏览器和webview后退缓存机制](https://github.com/moyueating/blogBackup/blob/master/js/H5%E6%B5%8F%E8%A7%88%E5%99%A8%E5%92%8Cwebview%E5%90%8E%E9%80%80%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6.md)
 - [X] [window.performance](https://github.com/moyueating/blogBackup/blob/master/js/window.performance.md)
+- [ ] 微信端动态改变title
 
 
 ### React
