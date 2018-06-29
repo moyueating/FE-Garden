@@ -22,12 +22,12 @@ div{
 使用内联样式
 ```
 
-### 去除滚动条
+>去除滚动条
 ```
 ::-webkit-scrollbar {display:none}
 ```
 
-### 移除 input type="number" 时浏览器自带的上下箭头
+>移除 input type="number" 时浏览器自带的上下箭头
 ```
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -36,7 +36,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 ```
 
-### 禁用鼠标事件
+>禁用鼠标事件
 ```
 div.disabled{
   pointer-events: none;
