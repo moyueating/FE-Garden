@@ -8,7 +8,7 @@ div{
 
 >webpack无法编译-webkit-box-orient: vertical这个属性
 ```
-// 方案一
+// 方案一, webpack跳过编译
 div{
   overflow : hidden;
   text-overflow: ellipsis;
