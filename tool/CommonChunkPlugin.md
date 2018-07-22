@@ -15,23 +15,23 @@
 
 1、name和names 
 
-    a.如果name的值不与任何已存在的chunk相同，则会从options.chunks中提取出公共代码，并形成新的chunk，并以options.name去设置该chunk的name。
+>>a.如果name的值不与任何已存在的chunk相同，则会从options.chunks中提取出公共代码，并形成新的chunk，并以options.name去设置该chunk的name。
 
-    b.如果name选中的是已存在的chunk，则会从options.chunks中提取出被name选中的chunk。
+>>b.如果name选中的是已存在的chunk，则会从options.chunks中提取出被name选中的chunk。
 
-    c.如果name是不存在的chunk，则会根据其他配置提取出公共chunk，并将该chunk的name值设为opitons.name的值。
+>>c.如果name是不存在的chunk，则会根据其他配置提取出公共chunk，并将该chunk的name值设为opitons.name的值。
 
-    d.如果name是个数组，则等同于每个name轮番调用该插件。
+>>d.如果name是个数组，则等同于每个name轮番调用该插件。
 
 2、filename common chunk存入本地的文件名，未设置的话就默认使用chunk的名字。
 
 3、minChunks 此属性可以有以下的选项
 
-    a. 设定为数字（大于等于2），指定共用模块被多少个 chunk 使用才能被合并。
+>>a. 设定为数字（大于等于2），指定共用模块被多少个 chunk 使用才能被合并。
 
-    b. 也可以设为函数，接受 (module, count) 两个参数，就像基本使用的代码那样。
+>>b. 也可以设为函数，接受 (module, count) 两个参数，就像基本使用的代码那样。
 
-    c. Infinity，创建common chunk但是不合并任何公共模块，就是一个空模块。可以搭配entry的配置
+>>c. Infinity，创建common chunk但是不合并任何公共模块，就是一个空模块。可以搭配entry的配置
 
   ```
   entry: {
