@@ -61,9 +61,13 @@ function applyMiddleware(...middlewares) {
 }
 ```
 1、applyMiddleware()执行完成后返回了一个闭包函数，目的是将创建 store的步骤放在这个闭包内执行，这样 middleware 就可以共享 store 对象。我看到这里有个疑惑，不是说只有一个唯一store的么，我们上面开始初始化的时候let store = createStore()就创建了一个store了，难道自己打自己脸了？这里我们先留个疑问在这里，下面来讲。
+
 2、map middlewares后得到新的数组chain
+
 3、通过compose后得到改造后的dispatch方法
+
 4、最后返回新的store
+
 这里来解决一下上面的疑惑，我们就看一下createStore的源码，我们主要看一下下面这段代码
 ```
 function createStore(reducer, preloadedState, enhancer) {
