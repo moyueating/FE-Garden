@@ -49,6 +49,13 @@ div.disabled{
 
 [iPhone X的Web设计](https://www.w3cplus.com/mobile/designing-websites-for-iphone-x.html)
 
+>消除浏览器选中蓝色背景
+```
+div{
+  user-select: none;
+}
+```
+
 
 
 
