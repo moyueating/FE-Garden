@@ -1,6 +1,6 @@
 ### react自适应高度的textarea
 
-```
+```js
 class Text extends React.Component{
 
   resize = () => {

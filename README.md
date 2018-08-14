@@ -16,7 +16,7 @@
 - [X] [window.performance](https://github.com/moyueating/blogBackup/blob/master/js/window.performance.md)
 - [X] [函数节流](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81.md)
 - [X] [拖拽](https://github.com/moyueating/FE-Garden/blob/master/js/%E6%8B%96%E6%8B%BD.md)
-- [ ] [webfont优化]()
+<!-- - [ ] [webfont优化]() -->
 
 ### React
 

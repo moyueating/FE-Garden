@@ -1,7 +1,7 @@
 ### position定位
 定位问题老生常谈，position的定位有4种，static（没有定位），relative（相对于自身的定位），absolute（相对于第一个非static定位的父级元素），fixed（相对于页面固定定位）。
 今天主要讲一下absolute定位的问题
-```
+```html
 // html
 <body>
     <div class="blue">
@@ -13,7 +13,7 @@
     </div>
 </body>
 ```
-```
+```css
 // css
 .blue{
     background: lightblue;
