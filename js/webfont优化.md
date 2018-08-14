@@ -30,10 +30,8 @@ IE的问题无法避免，不过只用兼容到IE9，目前主流的字体格式
   src: url('./font/font.eot') format('embedded-opentype'),url('./font/font.ttf') format('truetype');
 }
 ```
-但是上面的代码却还带来了另外一种错误。代号为CSS3114，@font-face未能完成OpenType嵌入权限检查，大概就是IE对web字体的嵌入需要资格字体的权限，但是设计师网上下载的时候是看不出来的。有点类似文件只读只写的属性，[这篇文章有介绍](https://www.devexpress.com/Support/Center/Question/Details/T543636/the-css3114-font-face-failed-opentype-embedding-permission-check-permission-must-be)。那我一个前端怎么会知道这么多，后来找到一个工具可以提供权限控制并转化格式[fontConverter](https://onlinefontconverter.com/)。还有一个好多人推荐的[font squirrel](http://www.fontsquirrel.com/tools/webfont-generator)。我选择了前者，后者未试用。
-
-如果转化字体格式出错的话，你还有可能得到CSS3111。遇到这个错误请首先检查字体包是否异常。
-
+但是上面的代码却还带来了另外一种错误。代号为CSS3114，@font-face未能完成OpenType嵌入权限检查，大概就是IE对web字体的嵌入需要资格字体的权限，但是设计师网上下载的时候是看不出来的。有点类似文件只读只写的属性，[这篇文章有介绍](https://www.devexpress.com/Support/Center/Question/Details/T543636/the-css3114-font-face-failed-opentype-embedding-permission-check-permission-must-be)。那我一个前端怎么会知道这么多，后来找到一个工具可以提供权限控制并转化格式[fontConverter](https://onlinefontconverter.com/)。还有一个好多人推荐的[font squirrel](http://www.fontsquirrel.com/tools/webfont-generator)。我选择了前者，后者未试用。  
+如果转化字体格式出错的话，你还有可能得到CSS3111。遇到这个错误请首先检查字体包是否异常。  
 但是后来觉得这样加载两种格式资源就更大了，后来看了.woff和.woff2，简直好用啊，因为.woff刚好是IE9+，而且.woff自带压缩，相对的体积要比.tff格式小，。.woff2的字体压缩率比.woff更优秀，但是IE11+，所以只好放弃，使用.woff.
 
 ```css
@@ -46,8 +44,7 @@ IE的问题无法避免，不过只用兼容到IE9，目前主流的字体格式
 这样兼容性问题就解决了。
 
 ### 资源加载
-这么多字体包，再怎么压缩也肯定很大，所以一定要考虑资源加载的问题。参阅了网上很多资料，结合自己的项目最终还是采用以下方式：
-
+这么多字体包，再怎么压缩也肯定很大，所以一定要考虑资源加载的问题。参阅了网上很多资料，结合自己的项目最终还是采用以下方式：  
   1、首先将字体包上传至CDN服务器上。  
   2、在需要字体的前一个页面利用link rel="preload"进行内容预加载。  
   3、进入当前页后利用浏览器的缓存，达到快速加载渲染的效果。  
