@@ -1,17 +1,19 @@
 >记一次webfont需求优化
 
-  - 浏览器请求 HTML 文档。
-  - 浏览器开始解析 HTML 响应和构建 DOM。
-  - 浏览器发现 CSS、JS 以及其他资源并分派请求。
-  - 浏览器在收到所有 CSS 内容后构建 CSSOM，然后将其与 DOM 树合并以构建渲染树。
-  - 在渲染树指示需要哪些字体变体在网页上渲染指定文本后，将分派字体请求。
-  - 浏览器执行布局并将内容绘制到屏幕上。
-  - 如果字体尚不可用，浏览器可能不会渲染任何文本像素。
-  - 字体可用之后，浏览器将绘制文本像素。
+```
+  1、浏览器请求 HTML 文档。
+  2、浏览器开始解析 HTML 响应和构建 DOM。
+  3、浏览器发现 CSS、JS 以及其他资源并分派请求。
+  4、浏览器在收到所有 CSS 内容后构建 CSSOM，然后将其与 DOM 树合并以构建渲染树。
+  5、在渲染树指示需要哪些字体变体在网页上渲染指定文本后，将分派字体请求。
+  6、浏览器执行布局并将内容绘制到屏幕上。
+  7、如果字体尚不可用，浏览器可能不会渲染任何文本像素。
+  8、字体可用之后，浏览器将绘制文本像素。
+```
 
 通常一个字体文件的大小都在2-3M左右，所以前端在做需求的时候，如果遇到特殊字体的需求一般会让设计师将这些字体切图，然后使用图片形式加载，但是这种情况适用于文字固定，字体少量的情况下。现在你们看一下下面的需求，这样就没法使用了。
 
-![]()
+![效果](https://raw.githubusercontent.com/moyueating/blogImg/master/webfont/webfont.gif)
 
 这么多数量的字体包同时在一个页面上，优化就是必须的。期间试了多种方法，看了很多文档，但是基本的套路是不会改变的。
 
@@ -64,7 +66,7 @@ function preLoad(href){
 
 
 相关资料
-[Web 性能优化（6）——WebFont 字体优化](https://blog.nfz.moe/archives/wpo-web-font-performance.html)
-[Web Font 123 - 再谈 WebFont 优化](https://blog.nfz.moe/archives/webfont-123.html)
-[字体加载策略大全](https://www.w3cplus.com/css/comprehensive-webfonts.html)
-[了解woff2字体及转换](https://www.zhangxinxu.com/wordpress/2018/07/known-woff2-mime-convert/)
+[Web 性能优化（6）——WebFont 字体优化](https://blog.nfz.moe/archives/wpo-web-font-performance.html)  
+[Web Font 123 - 再谈 WebFont 优化](https://blog.nfz.moe/archives/webfont-123.html)  
+[字体加载策略大全](https://www.w3cplus.com/css/comprehensive-webfonts.html)  
+[了解woff2字体及转换](https://www.zhangxinxu.com/wordpress/2018/07/known-woff2-mime-convert/)  
