@@ -86,7 +86,10 @@
 
 
 **相关资料**
+
 **1  [https://developer.mozilla.org/zh-CN/docs/Web/API/Performance](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)**
+
+
 **2  [http://javascript.ruanyifeng.com/bom/performance.html#toc5](http://javascript.ruanyifeng.com/bom/performance.html#toc5)**
 
 
