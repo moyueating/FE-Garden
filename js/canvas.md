@@ -2,10 +2,10 @@
 DOM转canvas，已经有很好的开源库html2canvas和dom-to-img了，但是两个库在我这里多多少少有点毛病暂时无法解决，只好自己动手丰衣足食。
 
 这里先记录几个上述库的issue 
->[dom-to-img转化一行文字的时候，最后一个字会无故换行至新的一行，原因未知🤣](https://github.com/tsayen/dom-to-image/issues/143) 
->dom-to-img自带不支持IE和Safari的光环，和自身实现原理利用svg foreignObject 有关 
->[html2canvas对于@font-face在Chrome上无效](https://github.com/niklasvh/html2canvas/issues/364) 
->html2canvas对于英文状态下的writing-mode: vertical-lr模式下表现怪异 
+>[dom-to-img转化一行文字的时候，最后一个字会无故换行至新的一行，原因未知🤣](https://github.com/tsayen/dom-to-image/issues/143)  
+>dom-to-img自带不支持IE和Safari的光环，和自身实现原理利用svg foreignObject 有关  
+>[html2canvas对于@font-face在Chrome上无效](https://github.com/niklasvh/html2canvas/issues/364)  
+>html2canvas对于英文状态下的writing-mode: vertical-lr模式下表现怪异  
 
 下面就是我自己绘制canvas将DOM转成canvas过程中遇到的一些问题，特此记录
 
@@ -36,11 +36,12 @@ fillText就是用 fillStyle 填充整个文字，而strokeText是用 strokeStyle
 ### 水平文本自动换行
 当时有两个构思： 
 #### 1、逐一绘制 
-每行固定字数，每个字之间间距一致，通过判断字数来控制累加x横向绘制，到达字数后，y累加来实现换行 
-优点： 
-- 逻辑简单，实现方便 
+每行固定字数，每个字之间间距一致，通过判断字数来控制累加x横向绘制，到达字数后，y累加来实现换行  
+优点：  
+- 逻辑简单，实现方便  
 缺点：  
-- 只试用于同一类文字，混合类间距不好统一 
+- 只试用于同一类文字，混合类间距不好统一  
+
 #### 1、用类似于css换行的思想
 这里[张鑫旭的文章比较清楚了](https://www.zhangxinxu.com/wordpress/2018/02/canvas-text-break-line-letter-spacing-vertical/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 
