@@ -37,13 +37,15 @@ fillText就是用 fillStyle 填充整个文字，而strokeText是用 strokeStyle
 当时有两个构思： 
 #### 1、逐一绘制 
 每行固定字数，每个字之间间距一致，通过判断字数来控制累加x横向绘制，到达字数后，y累加来实现换行  
+
 优点：  
 - 逻辑简单，实现方便  
+
 缺点：  
 - 只试用于同一类文字，混合类间距不好统一  
 
-#### 1、用类似于css换行的思想
-这里[张鑫旭的文章比较清楚了](https://www.zhangxinxu.com/wordpress/2018/02/canvas-text-break-line-letter-spacing-vertical/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
+#### 2、用类似于css换行的思想
+这里[张鑫旭的文章讲的比较清楚了](https://www.zhangxinxu.com/wordpress/2018/02/canvas-text-break-line-letter-spacing-vertical/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 
 但是张大神那个竖排的方法里面没有实现换行的逻辑，下面加了一些代码。
 ```js
