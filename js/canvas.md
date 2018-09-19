@@ -45,9 +45,7 @@ fillText就是用 fillStyle 填充整个文字，而strokeText是用 strokeStyle
 - 只试用于同一类文字，混合类间距不好统一  
 
 #### 2、用类似于css换行的思想
-这里[张鑫旭的文章讲的比较清楚了](https://www.zhangxinxu.com/wordpress/2018/02/canvas-text-break-line-letter-spacing-vertical/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
-
-但是张大神那个竖排的方法里面没有实现换行的逻辑，下面加了一些代码。
+这里[张鑫旭的文章讲的比较清楚了](https://www.zhangxinxu.com/wordpress/2018/02/canvas-text-break-line-letter-spacing-vertical/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)，但是张大神那个竖排的方法里面没有实现换行的逻辑，下面加了一些代码。
 ```js
 // 竖排绘制
 CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y, maxHeight, lineHeight, scale = 1) {
