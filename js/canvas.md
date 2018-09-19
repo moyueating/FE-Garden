@@ -2,10 +2,10 @@
 DOM转canvas，已经有很好的开源库html2canvas和dom-to-img了，但是两个库在我这里多多少少有点毛病暂时无法解决，只好自己动手丰衣足食。
 
 这里先记录几个上述库的issue 
->[dom-to-img转化一行文字的时候，最后一个字会无故换行至新的一行，原因未知🤣](https://github.com/tsayen/dom-to-image/issues/143)
->dom-to-img自带不支持IE和Safari的光环，和自身实现原理利用svg foreignObject 有关
->[html2canvas对于@font-face在Chrome上无效](https://github.com/niklasvh/html2canvas/issues/364)
->html2canvas对于英文状态下的writing-mode: vertical-lr模式下表现怪异
+>[dom-to-img转化一行文字的时候，最后一个字会无故换行至新的一行，原因未知🤣](https://github.com/tsayen/dom-to-image/issues/143) 
+>dom-to-img自带不支持IE和Safari的光环，和自身实现原理利用svg foreignObject 有关 
+>[html2canvas对于@font-face在Chrome上无效](https://github.com/niklasvh/html2canvas/issues/364) 
+>html2canvas对于英文状态下的writing-mode: vertical-lr模式下表现怪异 
 
 下面就是我自己绘制canvas将DOM转成canvas过程中遇到的一些问题，特此记录
 
