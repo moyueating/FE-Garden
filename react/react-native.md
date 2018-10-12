@@ -37,16 +37,16 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 
 
 #### 三方库
-[react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)需要客户端注入BVLinearGradient模块
+>[react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)
+>注意：需要客户端注入BVLinearGradient模块
 
-[react-navigation](https://github.com/react-navigation/react-navigation)
+>[react-navigation](https://github.com/react-navigation/react-navigation)
+>Android中的headerTitle默认是左对齐，由于左边有返回按钮，所以直接设置居中无效，需要在headerLeft和headerRight设置一样大小的容器来强制平衡左右占位空间
 
-Android中的headerTitle默认是左对齐，由于左边有返回按钮，所以直接设置居中无效，需要在headerLeft和headerRight设置一样大小的容器来强制平衡左右占位空间
+[react-native-storage](https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md) 
 
-[react-native-storage](https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md)
+[react-native-scrollable-tab-view](https://github.com/happypancake/react-native-scrollable-tab-view) 
 
-[react-native-scrollable-tab-view](https://github.com/happypancake/react-native-scrollable-tab-view)
-
-[beeshell](https://github.com/meituan/beeshell)美团开源组件库
+[beeshell](https://github.com/meituan/beeshell) 
 
 [lottie-react-native](https://github.com/react-community/lottie-react-native)
