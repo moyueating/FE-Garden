@@ -17,6 +17,8 @@
 - [X] [函数节流](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81.md)
 - [X] [拖拽](https://github.com/moyueating/FE-Garden/blob/master/js/%E6%8B%96%E6%8B%BD.md)
 - [X] [webfont优化](https://github.com/moyueating/FE-Garden/blob/master/js/webfont%E4%BC%98%E5%8C%96.md)
+- [X] [前端安全](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8.md)
+- [X] [canvas初识](https://github.com/moyueating/FE-Garden/blob/master/js/canvas.md)
 
 ### React
 
