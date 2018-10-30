@@ -58,3 +58,7 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 
 >[mobx](https://github.com/mobxjs/mobx)  
 1、react-native中使用mobx,低版本安卓中会报错，can't find variable:Symbol，尝试将mobx降至4.x版本。
+
+
+### 项目架构类
+多个有业务相关的RN业务需要放入同一个项目架构中，通过配置index.js的入口来导入不同的RN模块。
