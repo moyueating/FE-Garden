@@ -40,4 +40,4 @@
 - [X] [react-webpack](https://github.com/moyueating/blogBackup/blob/master/tool/react-webpack.md)
 - [X] [webpack动态创建入口](https://github.com/moyueating/blogBackup/blob/master/tool/webpack%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%85%A5%E5%8F%A3.md)
 - [X] [CommonChunkPlugin](https://github.com/moyueating/blogBackup/blob/master/tool/CommonChunkPlugin.md)
-- [X] [动态读取webpack打包在内存的bundle]()
+- [X] [动态读取webpack打包在内存的bundle](https://github.com/moyueating/FE-Garden/blob/master/tool/%E5%8A%A8%E6%80%81%E8%AF%BB%E5%8F%96webpack%E6%89%93%E5%8C%85%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84bundle.md)
