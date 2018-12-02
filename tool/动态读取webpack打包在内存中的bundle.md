@@ -50,8 +50,8 @@ serverCompile.watch({}, (err, stats) => {
 
 // 上面读取的bundle是字符串，我们需要将其转为我们平时代码中常见的模块方便输入输出，这里我们利用module的构造函数
 function requireFromString(bundle, filename) {
-  var Module = module.constructor;
-  var m = new Module();
+  const Module = module.constructor;
+  const m = new Module();
   m._compile(bundle, filename);
   return m.exports.default;
 }
