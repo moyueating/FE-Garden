@@ -147,5 +147,5 @@ Module.wrapper = [
 ```
 
 
-资源：
+资源：  
 [NativeModule.wrap](http://www.cnblogs.com/rubylouvre/archive/2011/11/25/2262521.html)
