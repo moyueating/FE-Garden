@@ -32,6 +32,26 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 1、onEndReached会在起始data为空数组的时候触发一次，需要过滤，通过数据长度判断或者onMomentumScrollBegin这个属性设置。  
 2、onEndReached会重复触发，需要设置flag。  
 
+>NetInfo  
+```js
+// 下面的方法在ios上并不能返回正确的网络连接状态
+NetInfo.isConnected.fetch().then(isConnected => {
+  console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+});
+// 改用一下方法
+getConnectionInfo = () => {
+  if(Platform.OS === 'ios'){
+    return new Promise((resolve,reject) => {
+      const connectionHandler = connectionInfo => {
+        NetInfo.removEventListener('connectionChange', connectionHandler)
+        resolve(connectionInfo)
+      }
+       NetInfo.addEventListener('connectionChange', connectionHandler)
+    })
+    return NetInfo.getConnectionInfo()
+  }
+}
+```
 
 
 #### 打包类
