@@ -39,6 +39,26 @@ onPressIn = () => this.props.rootRef.setNativeProps({scrollEnabled: false})
 onPressOut = () => this.props.rootRef.setNativeProps({scrollEnabled: true})
 ```
 
+>NetInfo  
+```js
+// 下面的方法在ios上并不能返回正确的网络连接状态
+NetInfo.isConnected.fetch().then(isConnected => {
+  console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+});
+// 改用一下方法
+getConnectionInfo = () => {
+  if(Platform.OS === 'ios'){
+    return new Promise((resolve,reject) => {
+      const connectionHandler = connectionInfo => {
+        NetInfo.removEventListener('connectionChange', connectionHandler)
+        resolve(connectionInfo)
+      }
+       NetInfo.addEventListener('connectionChange', connectionHandler)
+    })
+    return NetInfo.getConnectionInfo()
+  }
+}
+```
 
 
 #### 打包类

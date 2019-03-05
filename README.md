@@ -1,5 +1,5 @@
 ## 前端自留地
->文章的大多数是自己还有同事学习和项目中积累的前端经验，包括但不限于css，js，框架类，工具类...文章同步到[个人博客](http://whutzkj.space/)。
+>文章的大多数是自己还有同事学习和项目中积累的前端经验，包括但不限于css，js，框架类，工具类...文章同步到[个人博客](https://moyueating.github.io)。
 
 ### CSS
 
@@ -19,6 +19,7 @@
 - [X] [webfont优化](https://github.com/moyueating/FE-Garden/blob/master/js/webfont%E4%BC%98%E5%8C%96.md)
 - [X] [前端安全](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8.md)
 - [X] [canvas初识](https://github.com/moyueating/FE-Garden/blob/master/js/canvas.md)
+- [X] [行为委托](https://github.com/moyueating/FE-Garden/blob/master/js/%E8%A1%8C%E4%B8%BA%E5%A7%94%E6%89%98.md)
 
 ### React
 
