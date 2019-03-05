@@ -32,6 +32,13 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 1、onEndReached会在起始data为空数组的时候触发一次，需要过滤，通过数据长度判断或者onMomentumScrollBegin这个属性设置。  
 2、onEndReached会重复触发，需要设置flag。  
 
+>安卓里ScrollView嵌套冲突问题  
+可以尝试使用结合使用setNativeProps和pointEvents，在父层设置point-events="box-none"，内层的元素加上onPressIn和onPressOut,In里面禁用外层的滚动，out里面恢复外层滚动  
+```js
+onPressIn = () => this.props.rootRef.setNativeProps({scrollEnabled: false})
+onPressOut = () => this.props.rootRef.setNativeProps({scrollEnabled: true})
+```
+
 
 
 #### 打包类
@@ -55,6 +62,12 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 [beeshell](https://github.com/meituan/beeshell) 
 
 [lottie-react-native](https://github.com/react-community/lottie-react-native)
+
+[react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
+
+[react-native-interactable](https://github.com/wix/react-native-interactable)
+
+[react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel)
 
 >[mobx](https://github.com/mobxjs/mobx)  
 1、react-native中使用mobx,低版本安卓中会报错，can't find variable:Symbol，尝试将mobx降至4.x版本。
