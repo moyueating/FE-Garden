@@ -26,11 +26,18 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 >TextInput需要点击多次才失去焦点  
 一般情况下需要将TextInput放入ScrollView中，并且设置keyboardShouldPersistTaps属性为always。注意一点这里的ScrollView必须是最外层的，不然无效。
 
->TextInput可以直接onPress
+keyboardShouldPersistTaps这个属性点击scrollView后是否收起键盘，取决于本属性设置。而且是外层所有的scrollView都设置这个属性，所以在使用一些第三方库的时候如果造成scrollView的嵌套，只在自己的代码中加入这个属性是无效的，必须修改依赖的库的源码，加入keyboardShouldPersistTaps的属性。
+
+
+>TextInput可以直接onPress  
+
+- ios textInput没法输入中文  [commit](https://github.com/facebook/react-native/pull/18456/files)  
 
 >FlatList  
 1、onEndReached会在起始data为空数组的时候触发一次，需要过滤，通过数据长度判断或者onMomentumScrollBegin这个属性设置。  
 2、onEndReached会重复触发，需要设置flag。  
+
+
 
 >安卓里ScrollView嵌套冲突问题  
 可以尝试使用结合使用setNativeProps和pointEvents，在父层设置point-events="box-none"，内层的元素加上onPressIn和onPressOut,In里面禁用外层的滚动，out里面恢复外层滚动  
@@ -38,6 +45,7 @@ ios中borderRadius设置值大于等于宽高，该元素则会不显示，和cs
 onPressIn = () => this.props.rootRef.setNativeProps({scrollEnabled: false})
 onPressOut = () => this.props.rootRef.setNativeProps({scrollEnabled: true})
 ```
+
 
 >NetInfo  
 ```js
@@ -59,6 +67,12 @@ getConnectionInfo = () => {
   }
 }
 ```
+
+
+
+>FlatList  
+
+0.56.1版本中 FlatList同时设置ListHeaderComponent和onEndReached会导致onEndReached失效，官方回应需升级RN版本
 
 
 #### 打包类
