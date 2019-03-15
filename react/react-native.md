@@ -46,7 +46,6 @@ onPressIn = () => this.props.rootRef.setNativeProps({scrollEnabled: false})
 onPressOut = () => this.props.rootRef.setNativeProps({scrollEnabled: true})
 ```
 
-
 >NetInfo  
 ```js
 // 下面的方法在ios上并不能返回正确的网络连接状态
@@ -68,6 +67,15 @@ getConnectionInfo = () => {
 }
 ```
 
+>Modal,InteractionManager
+
+ios中连续的两个modal无法弹出，应该是动画执行的卡顿导致，尝试将第二个用InteractionManager包装一下
+```js
+InteractionManager.runAfterInteractions(() => {
+  // ...耗时较长的同步执行的任务...
+});
+```
+
 
 
 >FlatList  
@@ -77,21 +85,33 @@ getConnectionInfo = () => {
 
 #### 打包类
 >xcode RN打包报React/RCTBridgeModule.h' file not found  
+
 在xcode中设置先将React模块优先当依赖包注入，取消默认的平行打包[资料](https://blog.csdn.net/birthmarkqiqi/article/details/72819197)
 
 
 #### 三方库
 >[react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)  
+
 注：需要客户端注入BVLinearGradient模块
 
+
 >[react-navigation](https://github.com/react-navigation/react-navigation)  
+
 1、Android中的headerTitle默认是左对齐，由于左边有返回按钮，所以直接设置居中无效，需要在headerLeft和headerRight设置一样大小的容器来强制平衡左右占位空间.  
+
 2、ios中侧滑的时候和原生侧滑冲突，从原生进入A，再进入B，B页面侧滑会直接退出RN回到原生页面，尝试让客户端提供控制手势的API。  
+
+3、onNavigationStateChange监听路由变化事件
+
 
 [react-native-storage](https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md) 
 
->[react-native-scrollable-tab-view](https://github.com/happypancake/react-native-scrollable-tab-view)   
+
+>[react-native-scrollable-tab-view](https://github.com/happypancake/react-native-scrollable-tab-view) 
+
 1、如果页面使用了scrollView设置为水平布局后，会出现scrollView嵌套滚动冲突问题
+
+
 
 [beeshell](https://github.com/meituan/beeshell) 
 
@@ -104,6 +124,7 @@ getConnectionInfo = () => {
 [react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel)
 
 >[mobx](https://github.com/mobxjs/mobx)  
+
 1、react-native中使用mobx,低版本安卓中会报错，can't find variable:Symbol，尝试将mobx降至4.x版本。
 
 
