@@ -34,7 +34,11 @@
 ### 参考资源
 
 [Web 性能优化：Preload与Prefetch的使用及在 Chrome 中的优先级](https://blog.fundebug.com/2019/04/11/understand-preload-and-prefetch/)
+
 [通过preload进行内容预加载](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content)
+
 [chrome资源加载优先级](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit#heading=h.ua1godj1atee)
+
 [浏览器的工作原理：新式网络浏览器幕后揭秘(介绍了预解析)](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
+
 [webpack插件](https://github.com/GoogleChromeLabs/preload-webpack-plugin)
