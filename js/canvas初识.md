@@ -1,4 +1,6 @@
 
+[canvas-demo](https://moyueating.github.io/canvas-demo/)
+
 DOM转canvas，已经有很好的开源库html2canvas和dom-to-img了，但是两个库在我这里多多少少有点毛病暂时无法解决，只好自己动手丰衣足食。
 
 这里先记录几个上述库的issue 
