@@ -2,6 +2,10 @@
 
 [MDN Worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Worker)
 
+- web worker运行的js脚本必须是当前页面域下的
+
+- 不能读取本地文件
+
 ```
 // main.js
 function init(){
