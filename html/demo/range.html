@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range</title>
+</head>
+<body>
+    <div id="methods">
+        <p>setStart</p>
+        <p>setEnd</p>
+        <p>setStartBefore</p>
+        <p>setStartAfter</p>
+        <p>setEndBefore</p>
+        <p>setEndAfter</p>
+        <p>selectNode</p>
+        <p>collapse</p>
+    </div>
+    <div id='2'></div>
+
+
+
+    <script>
+        // 删除setEnd节点
+        // const range = document.createRange();
+        // range.setStart(document.querySelectorAll('p').item('1'), 0)
+        // range.setEnd(document.querySelectorAll('p').item('2'), 0)
+        // range.deleteContents();
+
+        // const range = document.createRange();
+        // const startReferenceNode = document.querySelectorAll('p').item('1')
+        // const endReferenceNode = document.querySelectorAll('p').item('2')
+        // range.setStartBefore(startReferenceNode)
+        // range.setEndBefore(endReferenceNode)
+        // range.deleteContents()
+
+        // const range = document.createRange();
+        // const startReferenceNode = document.querySelectorAll('p').item('0')
+        // const endReferenceNode = document.querySelectorAll('p').item('1')
+        // range.setStartAfter(startReferenceNode)
+        // range.setEndAfter(endReferenceNode)
+        // range.deleteContents()
+        // const range =document.createRange();
+        // range.selectNode(document.querySelectorAll('p').item('1'));
+        // range.deleteContents();
+
+    </script>
+
+    <script>
+        // 删除setEnd中的End
+        // const range = document.createRange();
+        // const target = document.querySelectorAll('p').item('1').childNodes[0]
+        // range.setStart(target, 3)
+        // range.setEnd(target, target.length)
+        // range.deleteContents();
+
+        // const range = document.createRange();
+        // range.selectNodeContents(document.querySelectorAll('p').item('1'))
+        // range.deleteContents()
+    </script>
+
+    <!-- <script>
+        // 克隆节点
+        const range = document.createRange();
+        range.selectNode(document.getElementById('methods'))
+        document.body.appendChild(range.cloneContents())
+    </script> -->
+
+    <script>
+        // 移动节点
+        // const range = document.createRange();
+        // range.selectNode(document.getElementById('methods'))
+        // document.getElementById('2').appendChild(range.extractContents())
+
+        // const range = document.createRange();
+        // const newParent = document.getElementById('2');
+        // range.selectNode(document.getElementById('methods'));
+        // range.surroundContents(newParent);
+    </script>
+
+
+    <!-- <script>
+        // 插入节点
+        const range = document.createRange();
+        const newNode = document.createElement('p');
+        newNode.innerHTML = '111111'
+        range.setStart(document.getElementById('2'), 0)
+        range.insertNode(newNode)
+    </script> -->
+</body>
+</html>
