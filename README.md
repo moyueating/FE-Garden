@@ -43,8 +43,10 @@
 - [X] [CommonChunkPlugin](https://github.com/moyueating/blogBackup/blob/master/tool/CommonChunkPlugin.md)
 - [X] [动态读取webpack打包在内存的bundle](https://github.com/moyueating/FE-Garden/blob/master/tool/%E5%8A%A8%E6%80%81%E8%AF%BB%E5%8F%96webpack%E6%89%93%E5%8C%85%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84bundle.md)
 - [X] [vscode调试webpack插件](https://github.com/moyueating/FE-Garden/blob/master/tool/vscode%E8%B0%83%E8%AF%95webpack%E6%8F%92%E4%BB%B6.md)
+- [X] [webpack加载原理](https://github.com/moyueating/FE-Garden/blob/master/webpack/webpack%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86.md)
 
 ## Performance
 
 - [X] [preload](https://github.com/moyueating/FE-Garden/blob/master/performance/preload.md)
 - [X] [renderToNodeStream](https://github.com/moyueating/FE-Garden/blob/master/performance/renderToNodeStream.md)
+- [X] [webworker](https://github.com/moyueating/FE-Garden/blob/master/performance/webworker.md)
