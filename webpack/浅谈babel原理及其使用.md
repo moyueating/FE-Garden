@@ -7,6 +7,8 @@
 - [@babel/traverse](https://github.com/babel/babel/blob/7.0/packages/@babel/traverse)：用于对AST（抽象语法树Abstract Syntax Tree）的遍历
 - [@babel/generator](https://github.com/babel/babel/blob/7.0/packages/@babel/generator)：根据AST生成代码
 
+![babel](https://raw.githubusercontent.com/moyueating/FE-Garden/master/static/%40babel%3Acore.png)
+
 #### 其他
 - [@babel/cli](https://github.com/babel/babel/blob/7.0/packages/@babel/cli)：用于命令行转码
 - [@babel/types](https://github.com/babel/babel/blob/7.0/packages/@babel/types)：用于检验，构建和变更AST的节点
