@@ -3,7 +3,7 @@
 >文章的大多数是自己还有同事学习和项目中积累的前端经验，包括但不限于css，js，框架类，工具类...文章同步到[个人博客](https://moyueating.github.io)。
 
 ## HTML
-
+- :white_check_mark: [range初识](https://github.com/moyueating/FE-Garden/blob/master/html/range.md)
 ## CSS
 
 - :white_check_mark: [position定位](https://github.com/moyueating/blogBackup/blob/master/css/positon%E5%AE%9A%E4%BD%8D.md)
@@ -22,6 +22,7 @@
 - :white_check_mark: [前端安全](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8.md)
 - :white_check_mark: [canvas初识](https://github.com/moyueating/FE-Garden/blob/master/js/canvas%E5%88%9D%E8%AF%86.md)
 - :white_check_mark: [行为委托](https://github.com/moyueating/FE-Garden/blob/master/js/%E8%A1%8C%E4%B8%BA%E5%A7%94%E6%89%98.md)
+- :white_check_mark: [异步](https://github.com/moyueating/FE-Garden/blob/master/js/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86.md)
 
 ## React
 
@@ -42,11 +43,13 @@
 - :white_check_mark: [webpack动态创建入口](https://github.com/moyueating/blogBackup/blob/master/tool/webpack%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%85%A5%E5%8F%A3.md)
 - :white_check_mark: [CommonChunkPlugin](https://github.com/moyueating/blogBackup/blob/master/tool/CommonChunkPlugin.md)
 - :white_check_mark: [动态读取webpack打包在内存的bundle](https://github.com/moyueating/FE-Garden/blob/master/tool/%E5%8A%A8%E6%80%81%E8%AF%BB%E5%8F%96webpack%E6%89%93%E5%8C%85%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84bundle.md)
-- :white_check_mark: [vscode调试webpack插件](https://github.com/moyueating/FE-Garden/blob/master/tool/vscode%E8%B0%83%E8%AF%95webpack%E6%8F%92%E4%BB%B6.md)
+- :white_check_mark: [vscode调试webpack插件](https://github.com/moyueating/FE-Garden/blob/master/webpack/vscode%E8%B0%83%E8%AF%95webpack%E6%8F%92%E4%BB%B6.md)
 - :white_check_mark: [webpack加载原理](https://github.com/moyueating/FE-Garden/blob/master/webpack/webpack%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86.md)
+- :white_check_mark: [webpack-loader](https://github.com/moyueating/FE-Garden/blob/master/webpack/webpack-loader.md)
 
 ## Performance
 
 - :white_check_mark: [preload](https://github.com/moyueating/FE-Garden/blob/master/performance/preload.md)
 - :white_check_mark: [renderToNodeStream](https://github.com/moyueating/FE-Garden/blob/master/performance/renderToNodeStream.md)
 - :white_check_mark: [webworker](https://github.com/moyueating/FE-Garden/blob/master/performance/webworker.md)
+- :white_check_mark: [lighthouse v6 优化方案](https://github.com/moyueating/FE-Garden/blob/master/static/lighthouseV6.png)
